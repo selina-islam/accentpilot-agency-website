@@ -6,7 +6,7 @@ import {
   FaMobileAlt,
   FaUsers,
 } from "react-icons/fa";
-import HeadingSection from "../../components/HeadingSection";
+import HeadingSection from "../components/HeadingSection";
 
 const services = [
   {

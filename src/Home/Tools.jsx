@@ -1,5 +1,5 @@
 import React from "react";
-import HeadingSection from "../../components/HeadingSection";
+import HeadingSection from "../components/HeadingSection";
 
 // this is a list of tools with image, name, title and subtitle
 const tools = [

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeadingSection from '../../components/HeadingSection'
+import HeadingSection from '../components/HeadingSection'
 
 const Testimonials = () => {
   return (

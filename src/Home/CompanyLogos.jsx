@@ -1,8 +1,8 @@
 import React from "react";
-import HeadingSection from "../../components/HeadingSection";
 import { FaAppStoreIos, FaMagento, FaPodcast } from "react-icons/fa";
 import { RxNotionLogo } from "react-icons/rx";
 import { LuNetwork } from "react-icons/lu";
+import HeadingSection from "../components/HeadingSection";
 
 // logos data with icon component and name
 const logos = [

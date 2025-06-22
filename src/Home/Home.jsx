@@ -1,9 +1,11 @@
 import React from 'react'
 import HeroSection from './HeroSection'
 import Tools from './Tools'
-import CompanyLogos from './CompanyLogos'
-import Services from './Services'
-import Testimonilas from './Testimonials'
+import Services from '../pages/Services';
+import Testimonials from './Testimonials';
+import Blogs from '../pages/Blogs';
+import CompanyLogos from './CompanyLogos';
+
 
 const Home = () => {
   return (
@@ -12,7 +14,8 @@ const Home = () => {
     <Tools/>
     <CompanyLogos/>
     <Services/>
-    <Testimonilas/>
+    <Testimonials/>
+    <Blogs/>
     </>
   )
 }
