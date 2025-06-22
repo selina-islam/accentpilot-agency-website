@@ -41,7 +41,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-12 md:py-18">
+    <section className=" pt-20 ">
       <div>
         <HeadingSection
           title="🎯 Our Core Services"

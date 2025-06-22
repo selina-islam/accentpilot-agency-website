@@ -4,7 +4,7 @@ const HeadingSection = ({ title, heading, description }) => {
   return (
     <div className="text-center py-4">
       {/* section small title */}
-      <h4 className="text-blue-300 text-center px-4 lg:px-8 text-xl font-semibold uppercase">
+      <h4 className="text-blue-200 text-center px-4 lg:px-8 text-xl font-semibold uppercase">
         {title}
       </h4>
 

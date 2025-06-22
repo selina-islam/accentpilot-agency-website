@@ -42,7 +42,7 @@ const Pricing = () => {
   const plans = isMonthly ? monthlyPlans : weeklyPlans;
 
   return (
-    <section className="px-5 py-10 max-w-7xl mx-auto">
+    <section className="px-5 pt-20 py-10 max-w-7xl mx-auto">
       <HeadingSection
         title="Choose Your Plan"
         heading="Our pricing plans are flexible and designed to fit your needs. Choose a plan that works best for you"
@@ -59,9 +59,9 @@ const Pricing = () => {
               checked={isMonthly}
               onChange={() => setIsMonthly(!isMonthly)}
             />
-            <div className="h-7 w-14 bg-slate-400 rounded-full transition-colors duration-300"></div>
+            <div className="h-7 w-14 bg-slate-100 rounded-full transition-colors duration-300"></div>
             <div
-              className={`absolute bg-blue-600 h-7 w-7 rounded-full top-0 left-0 transition-transform duration-300 ${
+              className={`absolute bg-blue-700 h-7 w-7 rounded-full top-0 left-0 transition-transform duration-300 ${
                 isMonthly ? 'translate-x-7' : ''
               }`}
             ></div>
@@ -74,9 +74,9 @@ const Pricing = () => {
         {plans.map((plan, index) => (
           <div
             key={index}
-            className="border p-6 rounded-xl shadow hover:shadow-lg transition duration-300"
+            className="border border-gray-800  hover:shadow-blue-500 p-6 rounded-xl shadow shadow-gray-500 hover:shadow transition duration-300"
           >
-            <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+            <h3 className="text-2xl text-gray-600 font-bold mb-2">{plan.name}</h3>
             <p className="text-3xl font-semibold text-blue-600 mb-4">{plan.price}</p>
             <ul className="space-y-2 text-gray-700">
               {plan.features.map((feature, idx) => (

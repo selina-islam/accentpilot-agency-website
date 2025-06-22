@@ -8,6 +8,7 @@ import CompanyLogos from './CompanyLogos';
 import TeamSection from './TeamSection';
 import Pricing from './Pricing';
 import FAQs from './FAQs';
+import CTA from './CTA';
 
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
     <TeamSection/>
     <Pricing/>
     <FAQs/>
+    <CTA/>
     </>
   )
 }

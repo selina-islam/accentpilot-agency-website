@@ -7,7 +7,7 @@ const HeroSection = () => {
     const Open=()=> setOpenModal(true)
     const Close=()=> setOpenModal(false)
   return (
-    <section className='w-full bg-[#0F172A] text-white'>
+    <section className='w-full bg-[#0F172A] text-white py-2 '>
       <div className='max-w-screen-2xl flex flex-col lg:flex-row items-center gap-8 px-4 md:px-6 lg:px-10 py-10 md:py-16 lg:py-20 mx-auto'>
         
         {/*left side */}

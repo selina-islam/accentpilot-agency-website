@@ -51,7 +51,7 @@ const blogPosts = [
 const Blogs = () => {
   return (
     // main section container
-    <section className="my-14 px-4 lg:px-22 ">
+    <section className="py-10 px-4 lg:px-22 ">
       {/* heading section with title and subtitle */}
       <div className="py-4">
         <HeadingSection

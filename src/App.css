@@ -13,3 +13,6 @@
 .animate-scroll {
   animation: scroll 10s linear infinite;
 }
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
