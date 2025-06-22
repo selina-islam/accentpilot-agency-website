@@ -10,7 +10,7 @@ const HeroSection = () => {
     <section className='w-full bg-[#0F172A] text-white'>
       <div className='max-w-screen-2xl flex flex-col lg:flex-row items-center gap-8 px-4 md:px-6 lg:px-10 py-10 md:py-16 lg:py-20 mx-auto'>
         
-        {/* বাম পাশে লেখা */}
+        {/*left side */}
         <div className='w-full lg:w-1/2 text-center lg:text-left'>
           <h1 className='text-3xl md:text-4xl font-extrabold leading-snug'>
             Elevate Your English.<br className='md:hidden' /> Speak with Confidence.
@@ -33,7 +33,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* ডান পাশে ছবি */}
+        {/* right side */}
         <div className='w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0'>
           <div className='relative flex items-center justify-center group'>
             

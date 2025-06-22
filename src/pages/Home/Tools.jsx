@@ -52,12 +52,12 @@ const Tools = () => {
       </h2>
 
       {/* grid layout to show all tools */}
-      <div className="grid grid-cols-2 md:grid-cols-4 p-8 gap-8 text-center text-black">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8 gap-8 text-center text-black">
         {tools.map((tool) => (
           // each tool box
           <ul
             key={tool.id}
-            className="bg-gray-300 hover:shadow hover:scale-105 duration-300 hover:shadow-blue-400 transition"
+            className="bg-gray-100 hover:shadow hover:scale-105 duration-300 hover:shadow-blue-400 transition"
           >
             {/* tool image */}
             <img
