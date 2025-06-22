@@ -63,7 +63,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end flex items-center space-x-6">
    <button className='border px-6 py-1 border-gray-600 rounded hidden md:flex'><Link to='/login '>Log In</Link></button>
-   <button className='border px-6 py-1 border-gray-600 rounded'><Link to='/pricing'>Start Free Trial</Link></button>
+   <button className='bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded font-medium '><Link to='/pricing'>Start Free Trial</Link></button>
   </div>
 </div>
   )
