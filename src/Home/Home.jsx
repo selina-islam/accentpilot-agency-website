@@ -6,6 +6,7 @@ import Testimonials from './Testimonials';
 import Blogs from '../pages/Blogs';
 import CompanyLogos from './CompanyLogos';
 import TeamSection from './TeamSection';
+import Pricing from './Pricing';
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
     <Testimonials/>
     <Blogs/>
     <TeamSection/>
+    <Pricing/>
     </>
   )
 }
