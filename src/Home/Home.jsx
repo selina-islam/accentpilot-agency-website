@@ -7,6 +7,7 @@ import Blogs from '../pages/Blogs';
 import CompanyLogos from './CompanyLogos';
 import TeamSection from './TeamSection';
 import Pricing from './Pricing';
+import FAQs from './FAQs';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
     <Blogs/>
     <TeamSection/>
     <Pricing/>
+    <FAQs/>
     </>
   )
 }
