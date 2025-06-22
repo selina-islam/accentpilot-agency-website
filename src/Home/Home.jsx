@@ -5,6 +5,7 @@ import Services from '../pages/Services';
 import Testimonials from './Testimonials';
 import Blogs from '../pages/Blogs';
 import CompanyLogos from './CompanyLogos';
+import TeamSection from './TeamSection';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
     <Services/>
     <Testimonials/>
     <Blogs/>
+    <TeamSection/>
     </>
   )
 }

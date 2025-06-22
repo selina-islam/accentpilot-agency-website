@@ -61,14 +61,14 @@ const Blogs = () => {
       </div>
 
       {/* blog cards layout using grid */}
-      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-center justify-center py-4 space-y-6 space-x-4 cursor-pointer">
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-center justify-center py-4  space-x-4 cursor-pointer">
         {/* loop through each blog post and display as a card */}
         {blogPosts.map((blog) => {
           return (
             // single blog card
             <div key={blog.id} className="shadow shadow-slate-200">
               {/* blog image */}
-              <div className="flex rounded-lg bg-white overflow-hidden ">
+              <div className="flex rounded-lg bg-white overflow-hidden hover:scale-105 transition transform duration-200">
                 <img
                   src={blog.image}
                   alt="Photo"
@@ -80,12 +80,12 @@ const Blogs = () => {
               <div className="bg-white text-black p-5">
                 <div>
                   {/* category */}
-                  <h2 className="text-gray-800 font-semibold">
+                  <h2 className=" font-bold">
                     Category: {blog.category}
                   </h2>
 
                   {/* title */}
-                  <h4 className="text-gray-700 font-medium py-1 leading-tight">
+                  <h4 className="text-gray-800 font-medium py-1 leading-tight">
                     Title: {blog.title}
                   </h4>
 
