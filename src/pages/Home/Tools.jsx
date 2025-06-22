@@ -1,4 +1,5 @@
 import React from "react";
+import HeadingSection from "../../components/HeadingSection";
 
 // this is a list of tools with image, name, title and subtitle
 const tools = [
@@ -38,18 +39,10 @@ const tools = [
 const Tools = () => {
   return (
     // main container with background and padding
-    <div className="flex flex-col justify-center items-center px-5 md:px-12 lg:px-22 py-12 bg-[#0F172A]">
-      {/* section small title */}
-      <h4 className="text-blue-300 text-xl font-semibold">
-        Empowering Your English Journey with Proven Tools
-      </h4>
-
-      {/* section main heading */}
-      <h2 className="text-3xl px-5 py-4 mb-10 text-center font-semibold">
-        At AccentPilot, we integrate world-class tools into our training—so you
-        can practice smarter, <br />
-        speak clearer, and grow faster with confidence.
-      </h2>
+    <div className="flex flex-col justify-center items-center px-4 md:px-12 lg:px-22 py-12 bg-[#0F172A]">
+     <HeadingSection title=' Empowering Your English Journey with Proven Tools' heading=' At AccentPilot, we integrate world-class tools into our training—so you
+        can practice smarter, 
+        speak clearer, and grow faster with confidence.'/>
 
       {/* grid layout to show all tools */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-8 gap-8 text-center text-black">
