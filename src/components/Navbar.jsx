@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router'
+import { AuthContexts } from '../context/AuthContext'
 
 const Navbar = () => {
+  const {user, logOut}=useContext(AuthContexts)
+  const handleLogOut=()=>{
+    logOut()
+  }
   return (
     <div className="navbar  border-b border-gray-700 bg-base-100 shadow-sm px-2 md:px-15 lg:px-28">
   <div className="navbar-start">
@@ -58,12 +63,18 @@ const Navbar = () => {
           </ul>
         </details>
       </li>
-      
+      z
     </ul>
   </div>
-  <div className="navbar-end flex items-center space-x-6">
-   <button className='border px-6 py-1 border-gray-600 rounded hidden md:flex'><Link to='/login '>Log In</Link></button>
-   <button className='bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded font-medium '><Link to='/pricing'>Start Free Trial</Link></button>
+  <div className="navbar-end flex items-center space-x-5">
+  {user ? <>
+  
+  
+   <button className='border text-balance px-6 py-1 border-gray-600 rounded hidden md:flex'><Link to='/dashboard'>Dashboard</Link></button>
+   <button onClick={handleLogOut} className='bg-blue-600 hover:bg-blue-700 text-white py-1 md:text-balance text-xs px-2 md::px-6 md:py-3 rounded font-medium '><Link to='/'>Log Out</Link></button> </>: 
+  
+  <> <button className='border text-balance px-6 py-1 border-gray-600 rounded hidden md:flex'><Link to='/login '>Log In</Link></button>
+   <button className='bg-blue-600 hover:bg-blue-700 text-white py-1 md:text-balance text-xs px-2 md::px-6 md:py-3 rounded font-medium '><Link to='/pricing'>Start Free Trial</Link></button> </>}
   </div>
 </div>
   )

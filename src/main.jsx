@@ -10,10 +10,14 @@ import ErrorPage from './components/ErrorPage.jsx'
 import Pricing from './Home/Pricing.jsx'
 import Login from './components/Login.jsx'
 import Registration from './components/registration.jsx'
+import AuthProvider from './context/AuthContext.jsx'
+import PrivateRoute from './routes/PrivateRoute.jsx'
+import Dashboard from './dashboard/Dashboard.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <BrowserRouter>
+  <AuthProvider>
+     <BrowserRouter>
    <Routes>
    <Route element={<App/>}>
     <Route path='/' element={<Home/>}/>
@@ -23,8 +27,11 @@ createRoot(document.getElementById('root')).render(
     <Route path='/pricing' element={<Pricing/>}/>
     <Route path='/login' element={<Login/>}/>
     <Route path='/register' element={<Registration/>}/>
+    {/* private route */}
+    <Route path='/dashboard' element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
    </Route>
    </Routes>
    </BrowserRouter>
+  </AuthProvider>
   </StrictMode>,
 )
