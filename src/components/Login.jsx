@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router'
 import { AuthContexts } from '../context/AuthContext'
+import { FacebookAuthProvider, GithubAuthProvider } from 'firebase/auth'
 
 const Login = () => {
   const {
@@ -13,7 +14,7 @@ const Login = () => {
 const navigate= useNavigate()
  
 
- const { userLogin, goggleLogin } = useContext(AuthContexts);  
+ const { userLogin, goggleLogin,loginGithub, loginFacebook } = useContext(AuthContexts);  
 
 const onSubmit = async (data) => {
   try {
@@ -26,6 +27,20 @@ const onSubmit = async (data) => {
   }
 };
 
+const handleGitgubLogin = () => {
+    loginGithub()
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        const user = result.user;
+        navigate('/');
+      })
+      .catch((error) => {
+        const credential = GithubAuthProvider.credentialFromError(error);
+        console.error('GitHub login failed:', error);
+      });
+  };
 
 
 const handleGoggleLogin= async()=>{
@@ -34,9 +49,22 @@ const handleGoggleLogin= async()=>{
 
   }catch(error){
 console.error('failed to login', error)
+
   }
 }
 
+
+const handleFacebookLogin=()=>{
+  loginFacebook().then((result) => {
+     const user = result.user;
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+     const accessToken = credential.accessToken;
+     navigate('/')
+  }).catch((error)=>{
+    console.error(error)
+     const credential = FacebookAuthProvider.credentialFromError(error);
+  })
+}
 
 
   return (
@@ -107,15 +135,15 @@ console.error('failed to login', error)
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-6 text-xl mb-2">
-          <Link className="cursor-pointer text-blue-600">
+          <button onClick={handleFacebookLogin} className="cursor-pointer text-blue-600">
             <FaFacebook />
-          </Link>
-          <Link onClick={handleGoggleLogin} className="cursor-pointer text-red-600">
+          </button>
+          <button onClick={handleGoggleLogin} className="cursor-pointer text-red-600">
             <FaGoogle />
-          </Link>
-          <Link className="cursor-pointer">
+          </button>
+          <button onClick={handleGitgubLogin} className="cursor-pointer">
             <FaGithub />
-          </Link>
+          </button>
         </div>
 
         <p className="text-xs text-center pt-2">

@@ -13,6 +13,7 @@ import Registration from './components/registration.jsx'
 import AuthProvider from './context/AuthContext.jsx'
 import PrivateRoute from './routes/PrivateRoute.jsx'
 import Dashboard from './dashboard/Dashboard.jsx'
+import DashboardHome from './dashboard/DashboardHomme.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')).render(
     <Route path='/register' element={<Registration/>}/>
     {/* private route */}
     <Route path='/dashboard' element={<PrivateRoute><Dashboard/></PrivateRoute>}/>
+    
    </Route>
    </Routes>
    </BrowserRouter>

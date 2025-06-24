@@ -63,7 +63,7 @@ const Navbar = () => {
           </ul>
         </details>
       </li>
-      z
+      
     </ul>
   </div>
   <div className="navbar-end flex items-center space-x-5">

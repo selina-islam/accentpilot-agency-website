@@ -3,12 +3,13 @@ import { useForm } from 'react-hook-form'
 import { FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router'
 import { AuthContexts } from '../context/AuthContext'
+import { FacebookAuthProvider, GithubAuthProvider } from 'firebase/auth'
 
 const Registration = () => {
    const {register,handleSubmit,formState: { errors },} = useForm()
 const navigate=useNavigate()
 
- const { createUser, goggleLogin } = useContext(AuthContexts);  
+ const { createUser, goggleLogin , loginGithub, loginFacebook} = useContext(AuthContexts);  
 
 const onSubmit = async (data) => {
   try {
@@ -21,7 +22,20 @@ const onSubmit = async (data) => {
   }
 };
 
+ const handleGitgubLogin = () => {
+    loginGithub()
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
 
+        const user = result.user;
+        navigate('/');
+      })
+      .catch((error) => {
+        const credential = GithubAuthProvider.credentialFromError(error);
+        console.error('GitHub login failed:', error);
+      });
+  };
 
 
 const handleGoggleLogin= async()=>{
@@ -34,7 +48,17 @@ console.error('failed to login', error)
   }
 }
 
-
+const handleFacebookLogin=()=>{
+  loginFacebook().then((result) => {
+     const user = result.user;
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+     const accessToken = credential.accessToken;
+     navigate('/login')
+  }).catch((error)=>{
+    console.error(error)
+     const credential = FacebookAuthProvider.credentialFromError(error);
+  })
+}
 
 
   return (
@@ -73,9 +97,9 @@ console.error('failed to login', error)
         <div className='h-px w-full bg-gray-400'></div>
       </div>
       <div className='flex flex-wrap items-center justify-center gap-6 text-xl'>
-        <Link className='cursor-pointer text-blue-600'><FaFacebook/></Link>
-        <Link onClick={handleGoggleLogin} className='cursor-pointer text-red-600'><FaGoogle/></Link>
-        <Link className='cursor-pointer'><FaGithub/></Link>
+        <button onClick={handleFacebookLogin} className='cursor-pointer text-blue-600'><FaFacebook/></button>
+        <button onClick={handleGoggleLogin} className='cursor-pointer text-red-600'><FaGoogle/></button>
+        <button onClick={handleGitgubLogin} className='cursor-pointer'><FaGithub/></button>
       </div>
       <p className='text-xs text-center pt-2'>Have an account? Please <Link to='/login' className='text-blue-800 underline cursor-pointer ml-1'>Login</Link></p>
       </div>
